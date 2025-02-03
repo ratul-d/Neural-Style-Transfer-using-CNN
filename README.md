@@ -10,7 +10,7 @@ NST utilizes a pre-trained CNN (typically VGG19) to extract content and style fe
 
 - **Content Loss**: Ensures that the generated image maintains the structure of the content image.
   
-  $`[ L_{content} = \frac{1}{2} \sum (C_{content} - G_{generated})^2 ]`$
+  $` L_{content} = \frac{1}{2} \sum (C_{content} - G_{generated})^2 `$
   
   where:
   - $`( C_{content} )`$ represents the feature map of the content image.
@@ -18,7 +18,7 @@ NST utilizes a pre-trained CNN (typically VGG19) to extract content and style fe
 
 - **Style Loss**: Captures the texture and color patterns of the style image using Gram matrices.
   
-  $`[ L_{style} = \sum (Gram(S_{style}) - Gram(G_{generated}))^2 ]`$
+  $` L_{style} = \sum (Gram(S_{style}) - Gram(G_{generated}))^2 `$
   
   where:
   - $`( S_{style} )`$ represents the feature map of the style image.
@@ -27,9 +27,19 @@ NST utilizes a pre-trained CNN (typically VGG19) to extract content and style fe
 
 - **Total Variation Loss**: Reduces noise and enhances smoothness in the generated image.
   
-  $`[ L_{TV} = \sum_{i,j} ((I_{i,j+1} - I_{i,j})^2 + (I_{i+1,j} - I_{i,j})^2) ]`$
+  $` L_{TV} = \sum_{i,j} ((I_{i,j+1} - I_{i,j})^2 + (I_{i+1,j} - I_{i,j})^2) `$
   
   where $`( I )`$ represents pixel intensities of the generated image.
+
+- **Total Loss**: Combines all three loss components to guide the optimization process.
+
+  $`(L_{total} = \alpha L_{content} + \beta L_{style} + \gamma L_{TV})`$
+
+  where:
+
+  - $`(\alpha)`$ controls the weight of the content loss.
+  - $`(\beta)`$ controls the weight of the style loss.
+  - $`(\gamma)`$ controls the weight of the total variation loss.
 
 ## Implementation Steps
 
