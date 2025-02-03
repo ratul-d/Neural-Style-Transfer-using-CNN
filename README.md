@@ -68,9 +68,9 @@ pip install tensorflow numpy
 
 ## Usage
 
-1. Prepare a content.jpg and a style.jpg.
-2. Run the NST script.
-3. Adjust hyperparameters (content/style weights) for desired results.
+1. Prepare a content.jpg and a style.jpg. Update target size based on your hardware capability.
+2. Adjust hyperparameters (content/style weights) for desired results. 
+3. Run the NST script.
 4. Display the image 'output17000.jpg' upon the execution of the code.
 
 ## Results & Observations
@@ -82,7 +82,7 @@ pip install tensorflow numpy
 <img src="https://github.com/user-attachments/assets/009ae32f-0c19-4b77-a1cd-5996b0aa2279" width="390"/>
 
 
-- Result Image
+- Result Image (NST executed at a lower resolution of 224x224 due to hardware limitations)
 <img src="https://github.com/user-attachments/assets/a6756b31-630e-4303-9176-09f4cd104363" />
 
 
