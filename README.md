@@ -84,20 +84,21 @@ pip install tensorflow numpy
 4. Display the image 'output17000.jpg' upon the execution of the code.
 
 ## Results & Observations
-- Content Image
+### Content Image
 <img src="https://github.com/user-attachments/assets/3d688ded-9ea6-4aea-acc4-1534312bab96" width="250"/>
 
 
-- Style Image
+### Style Image
 <img src="https://github.com/user-attachments/assets/009ae32f-0c19-4b77-a1cd-5996b0aa2279" width="390"/>
 
 
-- Result Image (NST executed at a lower resolution of 224x224 due to hardware limitations)
+### Result Image (NST executed at a lower resolution of 224x224 due to hardware limitations)
 <img src="https://github.com/user-attachments/assets/a6756b31-630e-4303-9176-09f4cd104363" />
 
 
 - Higher style weight produces more pronounced artistic patterns.
-- While additional iterations generally improve blending, they may also introduce artifacts. After a process of trial and error, 17,000 iterations have proven optimal at this stage, with a content weight of 1 and a style weight of 10,000."
+- While additional iterations generally improve blending, they may also introduce artifacts.
+- After a process of trial and error, 17,000 iterations have proven optimal at this stage, with a content weight of 1 and a style weight of 10,000."
 - The choice of VGG19 layers significantly impacts the quality of the transferred features.
 
 ## References
