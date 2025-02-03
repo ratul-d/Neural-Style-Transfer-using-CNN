@@ -33,7 +33,7 @@ NST utilizes a pre-trained CNN (typically VGG19) to extract content and style fe
 
 - **Total Loss**: Combines all three loss components to guide the optimization process.
 
-  $`(L_{total} = \alpha L_{content} + \beta L_{style} + \gamma L_{TV})`$
+  $`L_{total} = \alpha L_{content} + \beta L_{style} + \gamma L_{TV}`$
 
   where:
 
