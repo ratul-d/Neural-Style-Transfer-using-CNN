@@ -6,7 +6,7 @@ Neural Style Transfer (NST) is a deep learning technique that applies the artist
 
 ## Methodology
 
-NST utilizes a pre-trained CNN (typically VGG19) to extract content and style features from images. The objective function combines multiple loss components:
+NST utilizes a pre-trained CNN (VGG19) to extract content and style features from images. The objective function combines multiple loss components:
 
 - **Content Loss**: Ensures that the generated image maintains the structure of the content image.
   
