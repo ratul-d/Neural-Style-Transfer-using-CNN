@@ -67,6 +67,8 @@ VGG19 is used as the base network for feature extraction.
 
 - The generated image is updated iteratively to refine the style transfer.
 
+<img src="https://github.com/user-attachments/assets/aa1d4a92-ca05-4ca1-b923-2804e8d2c0c6" width="350"/>
+
 ## Dependencies
 
 Ensure you have the following dependencies installed:
