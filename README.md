@@ -86,22 +86,25 @@ pip install tensorflow numpy
 4. Display the image 'output17000.jpg' upon the execution of the code.
 
 ## Results & Observations
-### Content Image
-<img src="https://github.com/user-attachments/assets/3d688ded-9ea6-4aea-acc4-1534312bab96" width="250"/>
+| Content Image                            | Style Image                            |
+|-----------------------------------|-----------------------------------|
+| <img src="content.jpg" width="250"> | <img src="style.jpg" width="390"> |
 
 
-### Style Image
-<img src="https://github.com/user-attachments/assets/009ae32f-0c19-4b77-a1cd-5996b0aa2279" width="390"/>
+### Result Image (Iteration 17000)
+<img src="c1,s10000,t10/iteration_17000.jpg" width="300"/>
 
 
-### Result Image 
-<img src="https://github.com/user-attachments/assets/dfc7f0ed-d74c-4fc6-8219-7aecda4febb4" width="280"/>
+### Neural Style Transfer Iteration Progress
 
+| Iteration 3000                     | Iteration 9000                     | Iteration 17000                    | Iteration 23000                    | Iteration 30000                    |
+|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|
+| ![Iteration 3000](c1,s10000,t10/iteration_03000.jpg) | ![Iteration 9000](c1,s10000,t10/iteration_09000.jpg) | ![Iteration 17000](c1,s10000,t10/iteration_17000.jpg) | ![Iteration 23000](c1,s10000,t10/iteration_23000.jpg) | ![Iteration 30000](c1,s10000,t10/iteration_30000.jpg) |
 
-- Higher style weight produces more pronounced artistic patterns.
+- A higher style weight produces more pronounced artistic patterns.
 - While additional iterations generally improve blending, they may also introduce artifacts.
-- After a process of trial and error, 17,000 iterations have proven optimal at this stage, with a content weight of 1 and a style weight of 10,000."
-- The choice of VGG19 layers significantly impacts the quality of the transferred features.
+- After a process of trial and error, 17,000 iterations have proven optimal at this stage, with a content weight of 1 and a style weight of 10,000.
+- The choice of VGG19 layers significantly affects the quality of the transferred features.
 
 ## References
 
