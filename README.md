@@ -94,8 +94,8 @@ pip install tensorflow numpy
 <img src="https://github.com/user-attachments/assets/009ae32f-0c19-4b77-a1cd-5996b0aa2279" width="390"/>
 
 
-### Result Image (NST executed at a lower resolution of 224x224 due to hardware limitations)
-<img src="https://github.com/user-attachments/assets/a6756b31-630e-4303-9176-09f4cd104363" />
+### Result Image 
+<img src="https://github.com/user-attachments/assets/dfc7f0ed-d74c-4fc6-8219-7aecda4febb4" width="280"/>
 
 
 - Higher style weight produces more pronounced artistic patterns.
