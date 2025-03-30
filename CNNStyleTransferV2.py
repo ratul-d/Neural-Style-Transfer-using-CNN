@@ -5,9 +5,12 @@ from tensorflow.keras.utils import save_img
 import tensorflow as tf
 import numpy as np
 
+#Adjust TARGET SIZE
+target_size=(600,600)
+
 tf.config.optimizer.set_jit(True)
 
-def load_and_preprocess_image(image,target_size=(224,224)):
+def load_and_preprocess_image(image,target_size=target_size):
     img = load_img(image,target_size=target_size)
     img = img_to_array(img)
     img = np.expand_dims(img,axis=0) #adding batch dimension for VGG19 compatibility #(224,244,3) -> (1,224,224,3)
@@ -17,15 +20,17 @@ def load_and_preprocess_image(image,target_size=(224,224)):
 def deprocess_image(image):
     img = image[0] #removes batch dimension
     img += [103.939, 116.779, 123.68]  #Reverses VGG19-specific preprocessing (mean subtraction) to restore original pixel values
-    img = np.flip(img, axis=-1) # Convert BGR to RGB
+    img = np.flip(img, axis=-1) #Converts BGR to RGB
     img = np.clip(img,0,255).astype("uint8") #After various operations, pixel values might have gone outside the valid range, hence adjusting
     return img
 
 
+
 content_layer = "block5_conv2"  #deeper layer because we need the main object and its location
-style_layers = ["block1_conv1", "block2_conv1", "block3_conv1", "block4_conv1", "block5_conv1"]
-#mutiple early layers because we need the art style and texture, not any specific object
+style_layers = ["block1_conv1", "block2_conv1", "block3_conv1", "block4_conv1", "block5_conv1"] #mutiple early layers because we need the art style and texture, not any specific object
 num_style_layers = len(style_layers)
+
+
 
 def build_model():
     vgg = VGG19(weights="imagenet", include_top=False)
@@ -65,7 +70,6 @@ def compute_loss(model, generated_image, base_content, base_style, content_weigh
 
     tv_loss = tv_weight * total_variation_loss(generated_image)
 
-    # Total Loss
     total_loss = content_loss + style_loss + tv_loss
     return total_loss
 
@@ -85,12 +89,16 @@ base_style = outputs[:num_style_layers]
 generated_image = tf.Variable(content_image,dtype=tf.float32)
 
 optimizer = tf.optimizers.Adam(learning_rate=0.02)
+
+
+
+#Adjust HYPERPARAMETERS
 content_weight = 1
 style_weight = 1e4
-tv_weight = 30
+tv_weight = 10
+iterations = 17000 #optimal at 17000, highly artistic at 30000
 
 
-iterations = 17000
 for i in range(iterations):
     with tf.GradientTape() as tape:
         loss = compute_loss(model,generated_image,base_content,base_style, content_weight, style_weight, tv_weight)
@@ -104,5 +112,6 @@ for i in range(iterations):
         if i % 100 == 0:
             print(f"Iteration {i}, Loss: {loss.numpy()}")
 
+
 final_image = deprocess_image(generated_image)
-save_img("output17000.jpg",final_image)
+save_img("output.jpg",final_image)
