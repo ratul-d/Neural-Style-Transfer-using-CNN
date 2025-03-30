@@ -67,7 +67,7 @@ VGG19 is used as the base network for feature extraction.
 
 - The generated image is updated iteratively to refine the style transfer.
 
-<img src="https://github.com/user-attachments/assets/aa1d4a92-ca05-4ca1-b923-2804e8d2c0c6" width="350"/>
+<img src="https://github.com/user-attachments/assets/7ecaf706-b400-453f-8d21-9b9c1ac7e688" width="400"/>
 
 ## Dependencies
 
@@ -80,19 +80,21 @@ pip install tensorflow numpy
 
 ## Usage
 
-1. Prepare a content.jpg and a style.jpg. Update target size based on your hardware capability.
-2. Adjust hyperparameters (content/style weights) for desired results. 
-3. Run the NST script.
-4. Display the image 'output17000.jpg' upon the execution of the code.
+1. Prepare a content.jpg and a style.jpg.
+2. Update target size based on your hardware capability.
+3. Adjust hyperparameters (content weight/style weight/iterations) for desired results. 
+4. Run the NST script.
+5. Display the image 'output.jpg' upon the execution of the code.
 
 ## Results & Observations
 | Content Image                            | Style Image                            |
 |-----------------------------------|-----------------------------------|
 | <img src="content.jpg" width="250"> | <img src="style.jpg" width="390"> |
 
-
-### Result Image (Iteration 17000)
-<img src="c1,s10000,t10/iteration_17000.jpg" width="300"/>
+### Result Image 
+| Iteration 17000                            | Iteration 30000                            |
+|-----------------------------------|-----------------------------------|
+| <img src="c1,s10000,t10/iteration_17000.jpg" width="300"> | <img src="c1,s10000,t10/iteration_30000.jpg" width="300"> |
 
 
 ### Neural Style Transfer Iteration Progress
@@ -103,7 +105,7 @@ pip install tensorflow numpy
 
 - A higher style weight produces more pronounced artistic patterns.
 - While additional iterations generally improve blending, they may also introduce artifacts.
-- After a process of trial and error, 17,000 iterations have proven optimal at this stage, with a content weight of 1 and a style weight of 10,000.
+- After a process of trial and error, 17,000 iterations have proven optimal for preserving realism and content details, while 30,000 iterations result in a more artistic, abstract effect, with a content weight of 1 and a style weight of 10,000.
 - The choice of VGG19 layers significantly affects the quality of the transferred features.
 
 ## References
